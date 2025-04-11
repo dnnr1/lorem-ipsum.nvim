@@ -54,7 +54,7 @@ require("cmp").setup({
 ## How to Use
 
 1. In insert mode, type `lorem`
-2. Press your configured completion key (like <C-Space>) to show suggestions.
+2. Press your configured completion key (like `<C-Space>`) to show suggestions.
 3. Select one of the available options:
    - `lorem ipsum (10 words)`: Generates lorem ipsum text with 10 words
    - `lorem ipsum (50 words)`: Generates lorem ipsum text with 50 words
