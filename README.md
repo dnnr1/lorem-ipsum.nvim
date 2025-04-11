@@ -45,7 +45,7 @@ require("cmp").setup({
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        { name = "lorem_ipsum" }, -- Add this line
+        { name = "lorem_ipsum" }, 👈 Add this line 
     }),
     -- Rest of the configuration...
 })
