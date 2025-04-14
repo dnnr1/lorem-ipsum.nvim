@@ -11,9 +11,6 @@ https://github.com/user-attachments/assets/1be0482c-e86d-46a8-a01b-c90eebba9ca4
 ```lua
 return {
     "dnnr1/lorem-ipsum.nvim",
-    config = function()
-        require("lorem_ipsum")
-    end,
     dependencies = {
         "hrsh7th/nvim-cmp",
     },
@@ -26,9 +23,6 @@ return {
 use {
     "dnnr1/lorem-ipsum.nvim",
     requires = { "hrsh7th/nvim-cmp" },
-    config = function()
-        require("lorem_ipsum")
-    end
 }
 ```
 
