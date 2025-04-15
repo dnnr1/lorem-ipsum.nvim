@@ -1,63 +1,66 @@
 # Lorem Ipsum for Neovim
 
-A simple plugin to generate "lorem ipsum" text directly in Neovim using nvim-cmp for autocompletion.
+A simple source that adds "lorem ipsum" autocompletion to Neovim via [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp).
 
 https://github.com/user-attachments/assets/1be0482c-e86d-46a8-a01b-c90eebba9ca4
 
-## Installation
+---
+
+## 📦 Installation
 
 ### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
+Add `lorem-ipsum.nvim` as a dependency of `nvim-cmp`:
+
 ```lua
 return {
-    "dnnr1/lorem-ipsum.nvim",
-    dependencies = {
-        "hrsh7th/nvim-cmp",
-    },
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "dnnr1/lorem-ipsum.nvim", -- 👈 Add this line
+  },
+  -- Your config continues...
 }
 ```
 
-### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-```lua
-use {
-    "dnnr1/lorem-ipsum.nvim",
-    requires = { "hrsh7th/nvim-cmp" },
-}
-```
-
-## Configuration
-
-To use this plugin, you **must** add the `lorem_ipsum` source to your nvim-cmp sources list. Add `{ name = "lorem_ipsum" }` to your nvim-cmp setup:
+Then, register the source in your cmp setup:
 
 ```lua
 require("cmp").setup({
-    -- Other configurations...
-    sources = require("cmp").config.sources({
-        -- Your other sources...
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-        { name = "lorem_ipsum" }, 👈 Add this line 
-    }),
-    -- Rest of the configuration...
+  -- Other configurations...
+  sources = require("cmp").config.sources({
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "lorem_ipsum" }, -- 👈 Add this line
+  }),
 })
 ```
 
-## How to Use
+## ✨ Usage
 
-1. In insert mode, type `lorem`
-2. Press your configured completion key (like `<C-Space>`) to show suggestions.
-3. Select one of the available options:
-   - `lorem ipsum (10 words)`: Generates lorem ipsum text with 10 words
-   - `lorem ipsum (50 words)`: Generates lorem ipsum text with 50 words
-   - `lorem ipsum (100 words)`: Generates lorem ipsum text with 100 words
+1. Enter insert mode and type `lorem`
+2. Trigger completion using your configured key (e.g. `<C-Space>`)
+3. Pick one of the available snippets:
+   - `lorem ipsum (10 words)`
+   - `lorem ipsum (50 words)`
+   - `lorem ipsum (100 words)`
 
-## Troubleshooting
+The selected option will insert a block of lorem ipsum text into your buffer.
 
-If the plugin is not working:
+---
 
-1. Check if `lorem_ipsum` is in your nvim-cmp sources list
-2. Make sure the plugin configuration is being loaded correctly
-3. Restart Neovim after making configuration changes
+## 🛠 Troubleshooting
+
+If it's not working:
+
+- ✅ Make sure `lorem-ipsum.nvim` is correctly added as a dependency of `nvim-cmp`
+- ✅ Ensure `{ name = "lorem_ipsum" }` is listed in your cmp sources
+- 🔄 Restart Neovim after making configuration changes
+
+## License 📄
+
+[MIT](LICENSE)
